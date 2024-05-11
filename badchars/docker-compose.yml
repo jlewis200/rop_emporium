@@ -1,0 +1,11 @@
+services:
+  ctf_container:
+    build: ./docker/ctf_container
+    image: ctf_container
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./:/home/test
+    ports:
+      - 2222:22
+    command: bash -c "service ssh start && bash"
